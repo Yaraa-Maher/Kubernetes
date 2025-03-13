@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod
+spec:
+  initContainers:
+    - name: init
+      image: busybox
+      command: ["sleep", "20"]
+  containers:
+    - name: redis
+      image: redis
